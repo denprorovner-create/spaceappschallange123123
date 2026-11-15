@@ -1,0 +1,178 @@
+PERILUNE
+Standalone 64-bit Windows space mission game
+
+Extract the full archive, then run Perilune.exe. Keep the assets directory beside
+the executable. The game runs offline.
+
+HELLAS SURVEY
+Choose Mission → Hellas Survey, the first flight in the archive. The Rocket
+and Rover tabs edit the same mission. Drag engines, tanks and boosters into
+the bay, and detach them with Delete or ×. In the Rover tab, choose landing
+and rover systems, then click or drag instruments onto the rover. The stock
+configuration costs $159M against a $170M cap. The assembly budget updates
+as you edit. Earth ascent, Mars departure and landing have separate fuel tanks.
+
+Choose Launch from Earth, then Launch (or Enter) on the pad. Auto trajectory
+flies ascent, plans and executes departure and integrates the coast to Mars.
+Manual mode
+lets you choose a launch date offset, parking altitude and transfer duration,
+fly ascent, choose the burn time, trim departure and make correction burns.
+The cyan trace is the computed prediction. The amber trace is flight history.
+
+At the 125 km atmospheric interface, choose Take entry control. Telemetry
+shows airspeed, Mach, static and dynamic pressure, density and heating.
+F deploys the parachute, H releases the heat shield, and E starts powered
+descent. A/D controls entry bank or landing steer. Up/Down changes throttle.
+Landing assist starts enabled in Auto and can be toggled during flight.
+After landing, M opens the Viking orbital map. Choose Traverse map to see the
+local sites and set a waypoint, or drive with W/S and A/D in the 3D view.
+For a demo, stop at two marked sites and press E with the panoramic camera
+selected. R starts the relay downlink. Use 300× surface warp and Coast to
+next relay as needed until at least 0.20 GB reaches Earth.
+The recorder, power supply, relay horizon and Earth light time affect delivery.
+
+See MarsDataSources.md for the MOLA raster products, target coordinates, NASA
+atmospheric references and model limits.
+
+BUILD
+Choose Mission → Blue Marble → Accept mission. Use the part-family menu to find
+engines, tanks, or boosters. Drag a part into the bay or double-click its card
+to attach it to its compatible mount. Add tanks, solid or liquid booster pairs,
+and choose propellant load. Click parts in 3D to select them and press Delete,
+or use × in the fitted list. Ctrl+Z undoes the last design change. The Rocket
+and Spacecraft tabs let you work on the launch stack and payload separately.
+Fit several distinct instruments if you want to collect additional science.
+Use Save and Load to exchange vehicle designs between missions.
+
+The assembly header shows committed cost, the mission cap and remaining funds
+or overage. The sidebar lists rocket, spacecraft and ground costs separately.
+Hover over a part to compare its cost, mass, lift and electrical consequences.
+Trade study estimates eclipse, contact time and returned science for your plan.
+Remember a baseline, change the build, and compare the two designs.
+
+LAUNCH
+Click Launch in the assembly bay, then Launch or Enter on the pad to start the
+countdown. W/S controls pitch, A/D adjusts heading, ↑/↓ adjusts liquid throttle,
+and Z/X sets full/zero throttle. Space separates boosters, core, then payload.
+Press F or Jettison fairing to split the shell and expose the spacecraft.
+Jettison removes mass. Above most of the atmosphere it also avoids exposing
+the payload to high aerodynamic pressure. Automatic separation can time this
+for you. Staging close-ups briefly reduce time warp to show moving parts.
+To release your spacecraft early, use Flight tools → Release spacecraft now.
+Guided ascent on the top bar enables steering and automatic staging. Holding
+W/S, A/D or the throttle keys takes manual steering back immediately. Hold
+Shift for finer steering and throttle adjustments.
+Flight tools also shows the suggested pitch and throttle. Guidance and staging
+assists can be toggled independently. For a first practice run, turn both on
+and set time warp to 20× after clearing the pad.
+Readiness warnings are advisory. An engine without a tank cannot produce thrust,
+and a vehicle with insufficient upward force stays on the pad. Budget and
+deadline affect mission credit. Flight can continue after completion or expiry.
+Pad camera tracks from a fixed position near the pad during early ascent.
+M (or F9) switches between Rocket view and the navigation map. The same map
+shows the assigned path, current trajectory, Moon and planets. Scroll or use
+the zoom buttons to change scale. Right-click any visible body to focus it.
+Earth is the starting focus. Use the focus list to jump to a body directly.
+
+ORBIT AND SCIENCE
+All 15 preset missions launch from Earth. For a Moon mission, fly to the
+300 km Earth parking orbit and release the spacecraft. Open Maneuvers:
+  B  Calculate and execute translunar injection at the next departure point.
+  N  Coast to the planned lunar arrival, about four simulated days later.
+  B  Brake into a lunar parking orbit. The science deadline starts here.
+  N  Warp to the science orbit's maneuver node, then B for insertion.
+The departure, capture, and insertion assists apply burns and consume
+propellant. During the transfer you can coast in real time, use time warp,
+or fly maneuver burns yourself. A burn away from the predicted trajectory
+can move the capture point. The Moon's position at arrival is marked on the
+map. If there is insufficient propellant, revise the propulsion system.
+
+After release, press M for the 3D map. Cyan marks the assigned path and amber
+marks your current path. White markers show apoapsis and periapsis when visible.
+Rocket view uses a close camera measured in meters. The background globe is
+rendered from the same viewpoint at the actual planetary radius and altitude.
+Open Maneuvers to select prograde, retrograde, radial or normal burns, or use N
+to warp to the suggested insertion point and B for assisted insertion. Manual
+burns use propellant. Z ignites at full throttle and X cuts it.
+
+Choose which instruments to arm, then select Start science (E). The panel shows
+each instrument's status and stored and delivered data in GB. Transmit to Earth
+sends stored data during a ground pass. For mission credit, deliver enough
+qualifying data from the assigned experiment and orbit before the deadline.
+Battery use and recorder size may make it useful to alternate science and radio.
+Open Report during flight or after an attempt to review score, resource usage
+and flight events. R toggles downlink.
+
+SANDBOX
+In Orbital flight, choose the body, experiment, flight constraints and orbit.
+Use Edit flight plan in assembly to change those choices with the vehicle intact.
+In Jezero rover, fit a chassis, aeroshell, parachute, descent stage, power,
+radio and any combination of four instruments. The scenario starts at Mars
+arrival during atmospheric descent. Landing assist is on by default. For
+manual descent, F deploys the parachute, E starts powered descent, and the
+arrow keys control thrust. A parachute alone will generally land too fast.
+After touchdown drive with W/S and steer with A/D. Stop at a site, select an
+instrument and press E. R commands downlink through a relay pass. The field
+journal shows science, imagery reference and sample counts. Surface time warp
+helps with relay and science waiting. The traverse and stations are simulated.
+
+NASA DATA
+• NASA JPL Horizons: Sun, Mercury, Venus, Earth, Moon, and Mars through Neptune
+  system barycenters. Geometric vectors centered on the solar-system barycenter,
+  J2000 ecliptic frame, km and km/s. Epoch JD 2461358.5 TDB, 2026-11-14 00:00.
+  The saved response vectors are in assets/horizons-20261114.csv.
+  https://ssd.jpl.nasa.gov/horizons/
+• NASA Artemis I mission timeline and trajectory operations are design
+  references for the flight sequence. Orion state vectors and the flown
+  trajectory are not imported. The simulation plans a new trajectory to each
+  fictional mission orbit, while Artemis I flew to a distant retrograde orbit.
+  https://www.nasa.gov/reference/artemis-i-mission-timeline/
+  https://ntrs.nasa.gov/citations/20230010480
+• JPL Solar System Dynamics: DE440 gravitational parameters and Earth sidereal
+  rotation; JPL Earth and Moon reference radii.
+  https://ssd.jpl.nasa.gov/astro_par.html
+  https://ssd.jpl.nasa.gov/planets/phys_par.html
+  https://ssd.jpl.nasa.gov/sats/phys_par/
+• NASA Goddard SVS CGI Moon Kit: 2048 × 1024 Lunar Reconnaissance Orbiter Camera
+  color mosaic, distributed as assets/moon.jpg.
+  https://svs.gsfc.nasa.gov/4720/
+• NASA Goddard Blue Marble: MODIS land, ocean and sea ice mosaic. Image by Reto
+  Stöckli, enhancements by Robert Simmon, MODIS Land Group support. The unchanged
+  JPEG was sourced from the CC BY-SA 3.0 mirror.
+  https://commons.wikimedia.org/wiki/File:Land_ocean_ice_2048.jpg
+  https://creativecommons.org/licenses/by-sa/3.0/
+• NASA Glenn: thrust, mass flow, and specific impulse reference.
+  https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/thrust-force/
+  https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/specific-impulse/
+  https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/drag-equation/
+• NASA Kepler fairing separation informed the two-shell animation.
+  https://science.nasa.gov/resource/kepler-fairing-separation/
+• NASA JPL / Caltech / USGS Viking color texture for Mars.
+  https://space.jpl.nasa.gov/tmaps/mars.html
+• NASA Perseverance Mastcam-Z photograph of the Jezero delta in the rover
+  journal and Sandbox. PIA24485, NASA/JPL-Caltech/ASU/MSSS.
+  https://science.nasa.gov/photojournal/perseverance-view-of-the-delta-in-jezero-crater/
+• NASA Mars landing overview informed the parachute and powered-descent case.
+  https://science.nasa.gov/planetary-science/programs/mars-exploration/mission-timeline/how-we-land-on-mars/
+• NASA Goddard Mission Design Lab and NASA CubeSat 101 informed the trade
+  study, spacecraft electrical budgets, and ground segment.
+  https://etd.gsfc.nasa.gov/capabilities/integrated-design-center/mission-design-lab
+  https://science.nasa.gov/wp-content/uploads/2023/06/nasa_csli_cubesat_101_508.pdf
+
+SIMULATION
+Newtonian point-mass gravity. The Sun, eight planets and Moon mutually perturb
+each other. The spacecraft is integrated as a test particle with differential
+third-body accelerations. Map trails and orbit readouts represent instantaneous
+osculating elements. Earth ascent and reentry use a simplified atmosphere and
+aerodynamic loads. Engines have fixed rated performance. The lunar planner
+uses an Earth-only approximation as an initial guess, then corrects it with
+the full N-body model. The simulation integrates the coast continuously and
+applies assisted injection and capture as instantaneous changes in velocity.
+Changing reference bodies at capture leaves the inertial position and velocity
+continuous except for the commanded burn. The Hellas Survey has a computed
+Earth-to-Mars trajectory. The separate Jezero practice scenario starts during
+descent. Hardware and budgets are fictional.
+The game models simplified ground station geometry and ideal Sun-pointing arrays.
+NASA images texture the orbital bodies. Launch terrain is illustrative.
+
+C# sources and Build.ps1 are in the PeriluneDesktop workspace directory.
