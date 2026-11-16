@@ -2,6 +2,8 @@
 
 Perilune is a Windows desktop game about designing, flying, and operating space missions. The showcase mission, **Hellas Survey**, takes a rover from a rocket assembly bay on Earth to the floor of Hellas Planitia on Mars. The game also includes 15 Earth and lunar missions and a Sandbox mode for custom mission planning.
 
+[Download the project demo (PowerPoint)](https://github.com/denprorovner-create/spaceappschallange123123/blob/main/docs/Perilune%20-%20Project%20Demonstration.pptx)
+
 ![The Hellas Survey rover on the surface of Mars](docs/hellas-surface.png)
 
 ## Play the Hackathon demo
